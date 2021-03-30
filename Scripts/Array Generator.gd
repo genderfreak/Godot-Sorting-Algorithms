@@ -14,3 +14,9 @@ func get_new_arr(r):
 
 func get_num_scale(num, r):
 	return num/r
+
+func get_str(arr):
+	var st = ""
+	for i in arr:
+		st += str(i) + " "
+	return st
