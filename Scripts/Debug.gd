@@ -13,6 +13,8 @@ var cur_arr
 var thread
 var elapsed = 17380 # ay
 
+export var delay = 0
+
 func _ready():
 	for i in ArraySorter.METHODS:
 		method_options.add_item(i)
@@ -40,18 +42,20 @@ func _on_Test_Button_pressed():
 		var arr = ArrayGenerator.get_new_arr(size_slider.value)
 		cur_arr = arr
 		sorting = true
-		thread.start(self, "testSort", 0)
+		thread.start(self, "testSort", delay)
 
 # d is delay
 func testSort(d):
 	var start_t = OS.get_ticks_msec()
 	while sorting:
+		method_options.disabled = true
 		OS.delay_msec(d)
 		var data = ArraySorter.call(method_options.get_item_text(method_options.selected), cur_arr)
 		cur_arr = data.array
 		sorting = false if data.done else true
 	var end_t = OS.get_ticks_msec()
 	elapsed = end_t - start_t
+	method_options.disabled = false
 	thread.call_deferred("wait_to_finish")
 
 #func _exit_tree():

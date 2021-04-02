@@ -2,7 +2,7 @@ extends Node
 
 onready var ArrayGenerator = get_parent().get_node("Array Generator")
 export var debug = true
-const METHODS = ["bubble_sort_step", "shaker_sort_step"]
+const METHODS = ["bubble_sort_step", "shaker_sort_step", "insertion_sort_step"]
 
 func _ready():
 	if debug == true:
@@ -35,3 +35,16 @@ func shaker_sort_step(arr):
 			done = false
 		i -= 1
 	return { "array": arr, "done": done }
+
+func insertion_sort_step(arr):
+	var i = 1
+	var done = true
+	while i < arr.size():
+		var k = arr[i]
+		var j = i - 1
+		while j >= 0 && arr[j] > k:
+			arr[j+1] = arr[j]
+			j -= 1
+			done = false
+		i += 1
+	return { "array": arr, "done": done}
