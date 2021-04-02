@@ -59,4 +59,28 @@ margin_left = -479.871
 margin_top = -34.1587
 margin_right = -439.871
 margin_bottom = -20.1587
+
+[node name="Size Slider" type="HSlider" parent="."]
+anchor_left = 0.623
+anchor_top = 0.938918
+anchor_right = 0.981
+anchor_bottom = 0.966
+max_value = 20000.0
+step = 1000.0
+value = 1000.0
+tick_count = 20
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Size Label" type="Label" parent="."]
+anchor_left = 0.609834
+anchor_top = 0.904047
+anchor_right = 0.685029
+anchor_bottom = 0.927381
+text = "1000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
 [connection signal="pressed" from="Test Button" to="." method="_on_Test_Button_pressed"]
