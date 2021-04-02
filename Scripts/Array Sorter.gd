@@ -2,6 +2,7 @@ extends Node
 
 onready var ArrayGenerator = get_parent().get_node("Array Generator")
 export var debug = true
+const METHODS = ["bubble_sort_step", "shaker_sort_step"]
 
 func _ready():
 	if debug == true:

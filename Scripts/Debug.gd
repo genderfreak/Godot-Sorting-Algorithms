@@ -6,6 +6,7 @@ onready var debug_label = $"ScrollContainer/Debug Label"
 onready var time_label = $"Time Label"
 onready var size_label = $"Size Label"
 onready var size_slider = $"Size Slider"
+onready var method_options = $"Method Options"
 
 var sorting = false
 var cur_arr
@@ -13,7 +14,8 @@ var thread
 var elapsed = 17380 # ay
 
 func _ready():
-	pass
+	for i in ArraySorter.METHODS:
+		method_options.add_item(i)
 
 func _process(delta):
 	# set time label
@@ -42,7 +44,7 @@ func testSort(d):
 	var start_t = OS.get_ticks_msec()
 	while sorting:
 		OS.delay_msec(d)
-		var data = ArraySorter.shaker_sort_step(cur_arr)
+		var data = ArraySorter.call(method_options.get_item_text(method_options.selected), cur_arr)
 		cur_arr = data.array
 		sorting = false if data.done else true
 	var end_t = OS.get_ticks_msec()

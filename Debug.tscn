@@ -83,4 +83,16 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="Method Options" type="OptionButton" parent="."]
+anchor_left = 0.286681
+anchor_top = 0.936542
+anchor_right = 0.369689
+anchor_bottom = 0.969875
+text = "Methods"
+align = 1
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": true
+}
 [connection signal="pressed" from="Test Button" to="." method="_on_Test_Button_pressed"]
