@@ -91,7 +91,6 @@ anchor_right = 0.369689
 anchor_bottom = 0.969875
 text = "Methods"
 align = 1
-selected = 0
 __meta__ = {
 "_edit_use_anchors_": true
 }

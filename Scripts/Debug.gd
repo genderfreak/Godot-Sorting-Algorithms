@@ -32,6 +32,9 @@ func _process(delta):
 #		debug_label.text = ArrayGenerator.get_str(cur_arr)
 
 func _on_Test_Button_pressed():
+	print(typeof(thread))
+	if typeof(thread):
+		print(thread.is_active())
 	if typeof(thread) == 0 || !thread.is_active():
 		thread = Thread.new()
 		var arr = ArrayGenerator.get_new_arr(size_slider.value)
@@ -49,7 +52,7 @@ func testSort(d):
 		sorting = false if data.done else true
 	var end_t = OS.get_ticks_msec()
 	elapsed = end_t - start_t
-	thread.wait_to_finish()
+	thread.call_deferred("wait_to_finish")
 
 #func _exit_tree():
 #	thread.wait_to_finish()
