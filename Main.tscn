@@ -10,6 +10,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="DrawPanel" type="Panel" parent="."]
+anchor_left = 0.278
+anchor_top = 0.053
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DrawBox" type="Node2D" parent="DrawPanel"]
+
 [node name="MenuPanel" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 0.1
@@ -41,14 +52,3 @@ anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="DrawPanel" type="Panel" parent="."]
-anchor_left = 0.278
-anchor_top = 0.053
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CanvasLayer" type="CanvasLayer" parent="DrawPanel"]
